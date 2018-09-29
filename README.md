@@ -8,6 +8,6 @@
     https://cloud.google.com/maps-platform/
     https://www.nutritionix.com/
 * Rough Draft of Primary Responsibilities:
-    Mike: AJAX
-    Eric: User validation
-    Jeremy: visual layout
+   **  Mike: AJAX
+   ** Eric: User validation
+   ** Jeremy: visual layout
