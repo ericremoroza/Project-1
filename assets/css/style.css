@@ -1,0 +1,11 @@
+.navbar {
+ width: fit-content;   
+}
+
+.panel {
+    background-color: #C60C1B;
+    width: 100%;
+    height: auto;
+    color: white;
+    font-weight: bolder;
+}
