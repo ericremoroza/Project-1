@@ -1,73 +1,105 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Food Locator</title>
+  <title>New York Times Search</title>
+  <!-- Bootstrap CSS CDN  -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" />
 
+  <!-- Font Awesome CSS Icons (For cool glyphicons) -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
 
+  <!-- Style to fix the issue of text extending past card length -->
+  <style>
+    .card-body a {
+      word-break: break-all;
+    }
 
-
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-  <link rel="stylesheet" href="assets/css/style.css">
+    .articleHeadline {
+      line-height: 1.5;
+    }
+  </style>
 </head>
 
 <body>
   <div class="container">
-    <div class="row">
-      <div class="col-md-3">
-
-        <!--search bar-->
-        <form class="navbar-form" role="search">
-          <div class="input-group add-on">
-            <input class="form-control" placeholder="Search" name="srch-term" id="srch-term" type="text">
-            <div class="input-group-btn">
-              <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
-            </div>
-          </div>
-        </form>
-
-        <!--navigation bar-->
-        <nav class="navbar navbar-default">
-          <div class="container trending">
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-            </div>
-            <div class="collapse navbar-collapse" id="navbar-collapse-1">
-              <ul class="nav navbar-nav trending-menu">
-                <li><a class="week" href="#">Food Locator</a></li>
-                <li><a href="https://www.tvtropes.org">Near Me</a></li>
-                <li><a href="https://www.warnerbros.com">By type </a></li>
-                <li><a href="http://.com">By Price</a></li>
-                <li><a href="http://.com">WIN IT</a></li>
-                <li><a class="week" href="http://.com">SUBSCRIBE </a></li>
-              </ul>
-            </div>
-          </div>
-        </nav>
-
-      </div>
+    <div class="jumbotron" style="background-color: #20315A ; color: white;">
+      <h1 class="text-center">
+        <strong>
+          <i class="fas fa-utensils    "></i> Locator
+        </strong>
+      </h1>
     </div>
     <div class="row">
-      <div class="panel panel">
-        <div class="panel-body">
-          <h1>Results: </h1>
-          <p></p>
-          <div class="search-parameters">
-            <h6>Search Parameters:</h6>
-            <p id="user-input"></p>
+      <div class="col-sm-12">
+        <br>
+        <div class="card">
+          <div class="card-header">
+            <strong>
+              <i class="fa fa-list-alt"></i> Search Parameters</strong>
+          </div>
+          <div class="card-body">
+            <form role="form">
+              <div class="form-group">
+                <label for="search">Search:</label>
+                <input type="text" class="form-control" id="search-term">
+              </div>
+              <button type="submit" class="btn btn-default" id="searchButton">
+                <i class="fa fa-search"></i> Search</button>
+              <button class="btn btn-default" id="clear-all">
+                <i class="fa fa-trash"></i> Clear Results</button>
+                <div class="form-group">
+                  <label for="pwd">Number of Results:</label>
+                  <select id="results-count" class="custom-select" aria-labelledby="dropdownMenuButton">
+                    <option value="25" selected>25</option>
+                    <option value="50">50</option>
+                    <option value="100">100</option>
+                  </select>
+                </div>
+            </form>
+            
           </div>
         </div>
       </div>
     </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <br>
+        <div class="card">
+          <div class="card-header">
+            <strong>
+              <i class="fa fa-table"></i> Results</strong>
+          </div>
+          <div class="card-body" id="article-section">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer Region -->
+    <div class="row">
+      <div class="col-sm-12">
+
+        <!-- Line Break followed by closing -->
+        <hr>
+        <h5 class="text-center">
+          <small>Made with lots and lots of
+            <i class="fa fa-heart"></i>
+          </small>
+        </h5>
+
+      </div>
+    </div>
+
   </div>
+
+  <!-- jQuery JS -->
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
+  <!-- Code to the JavaScript File -->
+  <script src="assets/javascript/app.js"></script>
+
 </body>
 
 </html>
