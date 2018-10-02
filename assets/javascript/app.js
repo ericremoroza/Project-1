@@ -5,7 +5,7 @@ $(document).ready(function () {
     */
     function getQueryURL() {
         var queryURL = "https://developers.zomato.com/api/v2.1/search";
-        var queryParams = {"user-key": "fafaa7da981182588674fb22841c865f"};
+        var queryParams = {"user-key": "b62b830baae8f96987ca00269a09c856"};
         queryParams.q = $("#search-term").val().trim();
         console.log("URL :" + queryURL);
         console.log(queryURL + $.param(queryParams));
