@@ -9,3 +9,7 @@
     color: white;
     font-weight: bolder;
 }
+
+.panel-body {
+    text-align: center;
+}
