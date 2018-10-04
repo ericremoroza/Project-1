@@ -1,7 +1,7 @@
 $(document).ready(function () {
     /**
     * pulls information from the form and build the query URL
-    * @returns {string} URL for NYT API based on form inputs
+    * @returns {string} URL for API based on form inputs
     */
     function getQueryURL() {
         var queryURL = "https://developers.zomato.com/api/v2.1/search?q=bones";
@@ -17,7 +17,7 @@ $(document).ready(function () {
         var numResults = $("#results-count").val();
         console.log(Data)
         for(var i = 0; i < numResults; i++){
-            var result = Data.response.docs[i];
+            var result = Data.response;
             var resultCount = i + 1;
             var resultList = $("<ul>");
             resultList.addClass("list-group");
