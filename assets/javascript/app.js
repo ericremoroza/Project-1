@@ -7,11 +7,22 @@ $(document).ready(function () {
         var queryURL = "https://developers.zomato.com/api/v2.1/search?q=";
         //"https://developers.zomato.com/api/v2.1/search";
         var querySearch = $("#search-term").val().trim();
-        var user_key = "b62b830baae8f96987ca00269a09c856";
+        var user_key = "fafaa7da981182588674fb22841c865f";
         console.log("URL :" + queryURL);
         console.log(queryURL + querySearch + "&user-key=" + user_key);
         return queryURL + querySearch + "&user-key=" + user_key;
+
+        //var yelpURL = "https://api.yelp.com/v3";
+        //"https://api.yelp.com/v3";
+       // var yelpSearch = $("#search-term").val().trim();
+       // var yelp_key = "WfDBStvk-RznQpV5Auega8ENEV9OdW9RCqpz6zWvzc73RRoiSJq0FC_rJDE28YrIPkNZpOcHdfTUyvm3Ss9NM221DSRSbcXTtVoGYgl3zLL8kz6ZSgATL_7yXaK2W3Yx";
+        //console.log("URL :" + yelpURL);
+        //console.log(yelpURL + yelpSearch + "&yelp-key=" + yelp_key);
+        //return yelpURL + yelpSearch + "&yelp-key=" + yelp_key;
+
     }
+
+
     function updatePage(data) {
         console.log(data);
         var restaurant = data.restaurants;
@@ -57,11 +68,11 @@ $(document).ready(function () {
         $.ajax({
             type: "GET",
             url: queryURL,
-            data: { "user-key": "b62b830baae8f96987ca00269a09c856" },
+            data: { "user-key": "fafaa7da981182588674fb22841c865f" },
             dataType: "json",
             beforeSend: (xhr) => {
                 xhr.setRequestHeader('Accept', 'application/json');
-                xhr.setRequestHeader('user-key', 'b62b830baae8f96987ca00269a09c856');
+                xhr.setRequestHeader('user-key', 'fafaa7da981182588674fb22841c865f');
             }
         }).then(data => updatePage(data));
     });
