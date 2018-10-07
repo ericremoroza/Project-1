@@ -10,18 +10,8 @@ $(document).ready(function () {
         var user_key = "fafaa7da981182588674fb22841c865f";
         console.log("URL :" + queryURL);
         console.log(queryURL + querySearch + "&user-key=" + user_key);
-        return queryURL + querySearch + "&user-key=" + user_key;
-
-        //var yelpURL = "https://api.yelp.com/v3";
-        //"https://api.yelp.com/v3";
-       // var yelpSearch = $("#search-term").val().trim();
-       // var yelp_key = "WfDBStvk-RznQpV5Auega8ENEV9OdW9RCqpz6zWvzc73RRoiSJq0FC_rJDE28YrIPkNZpOcHdfTUyvm3Ss9NM221DSRSbcXTtVoGYgl3zLL8kz6ZSgATL_7yXaK2W3Yx";
-        //console.log("URL :" + yelpURL);
-        //console.log(yelpURL + yelpSearch + "&yelp-key=" + yelp_key);
-        //return yelpURL + yelpSearch + "&yelp-key=" + yelp_key;
-
+        return queryURL + querySearch + "&user-key=" + user_key + "&count=20";
     }
-
 
     function updatePage(data) {
         console.log(data);
@@ -29,42 +19,31 @@ $(document).ready(function () {
         console.log(restaurant);
         for (var i = 0; i < restaurant.length; i++) {
             var restaurantInfo = restaurant[i].restaurant;
-            var restoName = $("<button class='list-group-item list-group-item-action active' id='list-restaurant-list' data-toggle='list' href='#list-restaurant' role='tab' aria-controls='restaurant'> </button>").text(restaurantInfo.name);
-            var restoContent = $('<div class="tab-pane fade show active" id="list-restoContent" role="tabpanel" aria-labelledby="list-restoContent-list"> </div>').text(restaurantInfo.location);
-            $(".searchResult").append(
-                "<div class='col-4'> \
-                    <div class='list-group' id='list-tab' role='tablist'> \
-                    \
-                    </div> \
-                </div>");
+            var restoName = $('<a class="list-group-item list-group-item-action" id="list-restaurant' + i + '-list" data-toggle="tab" href="#list-restaurant' + i + '" role="tab" aria-controls="restaurant"> </a>').text(restaurantInfo.name);
+            var restoContent = $('<div class="tab-pane fade show" id="list-restaurant' + i + '" role="tabpanel" aria-labelledby="list-restoContent-list"> </div>').text("Address: " + restaurantInfo.location.address);
+            var restoWebsite = $('<div class="tab-pane fade show" id="list-restaurant' + i + '" role="tabpanel" aria-labelledby="list-restoContent-list"> </div>').text("Website: " + restaurantInfo.url);
             restoName.appendTo("#list-tab");
-            $("#list-restaurant-list").click(function (e) {
-                e.preventDefault();
-                $(".searchResult").append(
-                    "<div class='col-8'> \
-                        <div class='tab-content' id='nav-tabContent'> \
-                        \
-                        </div> \
-                    </div>");
-                restoContent.appendTo("#list-restoContent");
-            });
+            restoContent.appendTo("#nav-tabContent");
+            restoWebsite.appendTo(restoContent);
         }
-        /*
-        $(".searchResult").append("<div class='col-4'> \
-        <div class='list-group' id='list-tab' role='tablist'> \
-          <a class='list-group-item list-group-item-action active' id='list-restaurant-list' data-toggle='list' href='#list-restaurant' role='tab' aria-controls='restaurant'>restaurant</a> \
-        </div> \
-      </div>");
-      */
-        //$(".searchResult").append("<div class = 'col-4'>");
+        //activate Tab on click
+        $('#list-tab a').on('click', function (e) {
+            e.preventDefault();
+            $(this).tab('show');
+        });
+
     };
+
     function clear() {
-        $("#article-section").empty();
+        $("#list-tab").empty();
+        $("#list-restoContent").empty();
     }
+
     $("#searchButton").on("click", function () {
         event.preventDefault();
         clear();
         var queryURL = getQueryURL();
+
         $.ajax({
             type: "GET",
             url: queryURL,
@@ -76,5 +55,8 @@ $(document).ready(function () {
             }
         }).then(data => updatePage(data));
     });
+
+
+
     $("#clear-all").on("click", clear);
 });
