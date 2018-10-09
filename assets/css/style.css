@@ -34,6 +34,8 @@ body {
 }
 
 .list-group-item {
+    color:black;
+    background-color: white;
     text-align: -webkit-center;
 }
 .list-group-item.active {
