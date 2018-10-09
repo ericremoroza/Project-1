@@ -4,17 +4,15 @@
 <head>
   <meta charset="UTF-8">
   <title>Food Locator</title>
-
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+    crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+    crossorigin="anonymous">
   <style>
     .card-body a {
       word-break: break-all;
     }
-
     .articleHeadline {
       line-height: 1.5;
     }
@@ -23,20 +21,20 @@
 
 <body>
   <div class="container">
-    <div class="jumbotron" style="background-color: rgb(206, 209, 12) ; color: rgb(8, 1, 1);">
+    <div class="jumbotron" style="background-color: rgb(37,169,182) ; color: rgb(8, 1, 1);">
       <h1 class="text-center">
         <strong>
-          <i class="fa fa-car"></i> Food Locator <i class="fa fa-car"></i>
+          <i class="fas fa-utensils"></i> Food Locator <i class="fas fa-utensils"></i>
         </strong>
       </h1>
     </div>
     <div class="row">
-      <div class="col-sm-12">
+      <div class="col-12">
         <br>
         <div class="card">
           <div class="card-header">
             <strong>
-              <i class="fa fa-list-alt"></i> Search Resturaunts</strong>
+              <i class="fa fa-list-alt"></i> Search Restaurants</strong>
           </div>
           <div class="card-body">
             <form role="form">
@@ -44,65 +42,65 @@
                 <label for="search">Search:</label>
                 <input type="text" class="form-control" id="search-term">
               </div>
-              <div>
-                <label for="location">Location:</label>
-                <input type="text" id="location" placeholder='City, State'>
-              </div>
-              <button type="submit" class="btn btn-default" id="searchButton">
-                <i class="fa fa-search"></i> Search</button>
-              <button class="btn btn-default" id="clear-all">
-                <i class="fa fa-trash"></i> Clear Results</button>
+              <button type="submit" class="btn btn-info" id="searchButton">
+                <i class="fas fa-search"></i> Search</button>
+              <button class="btn btn-info" id="clear-all">
+                <i class="fas fa-trash-alt"></i>
+                Clear Results
+              </button>
               <div class="form-group">
                 <label for="pwd">Number of Results:</label>
-                <select id="results-count" class="custom-select" aria-labelledby="dropdownMenuButton">
-                  <option value="25" selected>25</option>
-                  <option value="50">50</option>
-                  <option value="100">100</option>
+                <select id="results-count" placeholder="Select the number of results" class="custom-select"
+                  aria-labelledby="dropdownMenuButton">
+                  <option value="5">5</option>
+                  <option value="10">10</option>
+                  <option value="20">20</option>
                 </select>
               </div>
             </form>
-
           </div>
         </div>
       </div>
     </div>
     <div class="row">
-      <div class="col-sm-12">
+      <div class="col-12">
         <br>
         <div class="card">
           <div class="card-header">
             <strong>
               <i class="fa fa-table"></i> Results</strong>
           </div>
-          <div class="card-body" id="article-section">
+          <div class="card-body searchResult" id="article-section">
+            <div class="row">
+              <div class="col-4">
+                <div class="list-group" id="list-tab" role="tablist"></div>
+              </div>
+              <div class="col-8">
+                <div class="tab-content" id="nav-tabContent"></div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-
-
     <div class="row">
-      <div class="col-sm-12">
-
-
+      <div class="col-12">
         <hr>
         <h5 class="text-center">
           <small>Find food fast
             <i class="fa fa-food"></i>
           </small>
         </h5>
-
       </div>
     </div>
-
   </div>
-
-
-  <script src="https://code.jquery.com/jquery.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
-
+  <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
   <script src="assets/javascript/app.js"></script>
-
 </body>
 
 </html>

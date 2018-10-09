@@ -1,3 +1,7 @@
+body {
+    background: url(../images/food.jpg);
+}
+
 .navbar {
  width: fit-content;   
 }
@@ -14,4 +18,34 @@
 
 .panel-body {
     text-align: center;
+}
+
+.card-body a {
+    word-break: break-all;
+}
+  
+.articleHeadline {
+    line-height: 1.5;
+}
+
+.jumbotron {
+    background-color: rgb(206, 209, 12);
+    color: rgb(8, 1, 1);
+}
+
+.list-group-item {
+    text-align: -webkit-center;
+}
+.list-group-item.active {
+    color: #fff;
+    background-color: #007bff;
+    text-align: -webkit-center;
+}
+
+.custom-select {
+    width: auto;
+}
+
+.col-12 {
+    background-color: #ffffff;
 }
