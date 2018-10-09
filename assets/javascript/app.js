@@ -7,7 +7,7 @@ $(document).ready(function () {
         var queryURL = "https://developers.zomato.com/api/v2.1/search?q=";
         //"https://developers.zomato.com/api/v2.1/search";
         var querySearch = $("#search-term").val().trim();
-        var user_key = "fafaa7da981182588674fb22841c865f";
+        var user_key = "b62b830baae8f96987ca00269a09c856";
         console.log("URL :" + queryURL);
         console.log(queryURL + querySearch + "&user-key=" + user_key);
         return queryURL + querySearch + "&user-key=" + user_key + "&count=20";
@@ -20,8 +20,8 @@ $(document).ready(function () {
         for (var i = 0; i < restaurant.length; i++) {
             var restaurantInfo = restaurant[i].restaurant;
             var restoName = $('<a class="list-group-item list-group-item-action" id="list-restaurant' + i + '-list" data-toggle="tab" href="#list-restaurant' + i + '" role="tab" aria-controls="restaurant"> </a>').text(restaurantInfo.name);
-            var restoContent = $('<div class="tab-pane fade show" id="list-restaurant' + i + '" role="tabpanel" aria-labelledby="list-restoContent-list"> </div>').text("Address: " + restaurantInfo.location.address);
-            var restoWebsite = $('<div class="tab-pane fade show" id="list-restaurant' + i + '" role="tabpanel" aria-labelledby="list-restoContent-list"> </div>').text("Website: " + restaurantInfo.url);
+            var restoContent = $('<li class="tab-pane fade show" id="list-restaurant' + i + '" role="tabpanel" aria-labelledby="list-restoContent-list"> </li>').text("Address: " + restaurantInfo.location.address);
+            var restoWebsite = $('<li class="tab-pane fade show" id="list-restaurant' + i + '" role="tabpanel" aria-labelledby="list-restoContent-list"> </li>').text("Website: " + restaurantInfo.url);
             restoName.appendTo("#list-tab");
             restoContent.appendTo("#nav-tabContent");
             restoWebsite.appendTo(restoContent);
@@ -47,11 +47,11 @@ $(document).ready(function () {
         $.ajax({
             type: "GET",
             url: queryURL,
-            data: { "user-key": "fafaa7da981182588674fb22841c865f" },
+            data: { "user-key": "b62b830baae8f96987ca00269a09c856" },
             dataType: "json",
             beforeSend: (xhr) => {
                 xhr.setRequestHeader('Accept', 'application/json');
-                xhr.setRequestHeader('user-key', 'fafaa7da981182588674fb22841c865f');
+                xhr.setRequestHeader('user-key', 'b62b830baae8f96987ca00269a09c856');
             }
         }).then(data => updatePage(data));
     });

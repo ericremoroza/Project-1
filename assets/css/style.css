@@ -1,6 +1,5 @@
 body {
     background: url(../images/food.jpg);
-    opacity: 0.8;
 }
 
 .navbar {
@@ -34,6 +33,9 @@ body {
     color: rgb(8, 1, 1);
 }
 
+.list-group-item {
+    text-align: -webkit-center;
+}
 .list-group-item.active {
     color: #fff;
     background-color: #007bff;
