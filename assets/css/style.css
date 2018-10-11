@@ -29,8 +29,13 @@ body {
 }
 
 .jumbotron {
-    background-color: rgb(206, 209, 12);
+    filter:blur(2px);
     color: rgb(8, 1, 1);
+}
+
+.jumbotron > .text-center {
+    filter:none;
+
 }
 
 .list-group-item {
@@ -50,8 +55,4 @@ body {
 
 .col-12 {
     background-color: #ffffff;
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 65963afec858f04ca7988277efa110a96aed1945

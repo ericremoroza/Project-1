@@ -20,11 +20,13 @@ $(document).ready(function () {
         for (var i = 0; i < restaurant.length; i++) {
             var restaurantInfo = restaurant[i].restaurant;
             var restoName = $('<a class="list-group-item list-group-item-action" id="list-restaurant' + i + '-list" data-toggle="tab" href="#list-restaurant' + i + '" role="tab" aria-controls="restaurant"> </a>').text(restaurantInfo.name);
-            var restoContent = $('<li class="tab-pane fade show" id="list-restaurant' + i + '" role="tabpanel" aria-labelledby="list-restoContent-list"> </li>').text("Address: " + restaurantInfo.location.address);
-            var restoWebsite = $('<li class="tab-pane fade show" id="list-restaurant' + i + '" role="tabpanel" aria-labelledby="list-restoContent-list"> </li>').text("Website: " + restaurantInfo.url);
+            var restoContent = $('<p class="tab-pane fade show" id="list-restaurant' + i + '" role="tabpanel" aria-labelledby="list-restoContent-list"> </p>').text("Address: " + restaurantInfo.location.address);
+            var restoWebsite = $('<p class="tab-pane fade show" id="list-restaurant' + i + '" role="tabpanel" aria-labelledby="list-restoContent-list"> </p>').text("Website: " + restaurantInfo.url);
+            var restoCuisine = $('<p class="tab-pane fade show" id="list-restaurant' + i + '" role="tabpanel" aria-labelledby="list-restoContent-list"> </p>').text("Cuisines: " + restaurantInfo.cuisines);
             restoName.appendTo("#list-tab");
             restoContent.appendTo("#nav-tabContent");
             restoWebsite.appendTo(restoContent);
+            restoCuisine.appendTo(restoWebsite);
         }
         //activate Tab on click
         $('#list-tab a').on('click', function (e) {
