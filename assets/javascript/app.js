@@ -19,7 +19,7 @@ $(document).ready(function () {
         console.log(restaurant);
         for (var i = 0; i < restaurant.length; i++) {
             var restaurantInfo = restaurant[i].restaurant;
-            var restoName = $('<a class="list-group-item list-group-item-action" id="list-restaurant' + i + '-list" data-toggle="tab" href="#list-restaurant' + i + '" role="tab" aria-controls="restaurant"> </a>').text(restaurantInfo.name);
+            var restoName = $('<a class="list-group-item list-group-item-action list-group-item-success" id="list-restaurant' + i + '-list" data-toggle="tab" href="#list-restaurant' + i + '" role="tab" aria-controls="restaurant"> </a>').text(restaurantInfo.name);
             var restoContent = $('<p class="tab-pane fade show" id="list-restaurant' + i + '" role="tabpanel" aria-labelledby="list-restoContent-list"> </p>').text("Address: " + restaurantInfo.location.address);
             var restoWebsite = $('<p class="tab-pane fade show" id="list-restaurant' + i + '" role="tabpanel" aria-labelledby="list-restoContent-list"> </p>').text("Website: " + restaurantInfo.url);
             var restoCuisine = $('<p class="tab-pane fade show" id="list-restaurant' + i + '" role="tabpanel" aria-labelledby="list-restoContent-list"> </p>').text("Cuisines: " + restaurantInfo.cuisines);
